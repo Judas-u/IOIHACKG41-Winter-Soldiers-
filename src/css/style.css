@@ -13,6 +13,51 @@ body {
     padding: 0;
 }
 
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    font-weight: 1000;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black; 
+    z-index: 1; 
+}
+
+.overlay-text p{
+    font-weight: normal;
+}
+
+
+.overlay-text-second{
+    position: absolute;
+    top: 30%;
+    left: 18%;
+    font-weight: 1000;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black; 
+    z-index: 1; 
+}
+
+.overlay-text-second p{
+    font-weight: normal;
+}
+
+.overlay-text-second-partII{
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    font-weight: 1000;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black; 
+    z-index: 1; 
+}
+
+.overlay-text-second-partII p{
+    font-weight: normal;
+}
 .products-dropdown {
     display: none;
     position: absolute;
@@ -49,7 +94,7 @@ body {
         border-bottom:1px solid black ;
 
     }
-
+    
 
 .product-card {
     position: relative;
@@ -103,7 +148,66 @@ section img {
     overflow: hidden;
 }
 
+.overlay-text-cod{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    font-weight: 1000;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:white; 
+    z-index: 1; 
+}
+.overlay-text-cod p{
+    font-weight: normal;
+}
 
+.overlay-text-stream-deck{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    font-weight: 1000;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:white; 
+    z-index: 1; 
+}
+
+.overlay-text-stream-dec p{
+    font-weight: normal;
+}
+
+.XLR-Dock{
+    position: absolute;
+    top: 30%;
+    left: 18%;
+    font-weight: 1000;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:white; 
+    z-index: 1;
+}
+.USB-Hub{
+    position: absolute;
+    top: 30%;
+    left: 68%;
+    font-weight: 1000;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:white; 
+    z-index: 1; 
+}
+
+.overlay-text-last{
+    position: absolute;
+    top: 30%;
+    left: 28%;
+    font-weight: 1000;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color:black; 
+    z-index: 1; 
+}
 
 .footer {
     padding: 4rem 0;
