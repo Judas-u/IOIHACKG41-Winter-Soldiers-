@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo - Great tech made easy</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        :root {
+            --primary-blue: rgb(24, 24, 125);
+            --light-blue: rgb(227, 234, 251);
+            --text-gray: rgb(71, 69, 69);
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Video styles */
+        .video-container {
+            width: 100%;
+            max-height: 650px;
+            overflow: hidden;
+            border-radius: 50px;
+            margin: 20px 0;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        /* Text styles */
+        .highlight-span {
+            padding: 8px 16px;
+            border-radius: 25px;
+            color: var(--primary-blue);
+            background-color: var(--light-blue);
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        h1 {
+            font-size: clamp(32px, 5vw, 50px);
+            color: black;
+            font-weight: lighter;
+            margin: 20px 0;
+        }
+
+        h4 {
+            font-size: clamp(24px, 3vw, 40px);
+            color: var(--text-gray);
+            font-weight: lighter;
+            margin: 20px 0;
+        }
+
+        /* Trailer section */
+        .trailer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .play-button {
+            background-color: black;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .play-button:hover {
+            background-color: #bed6ff;
+            color: var(--primary-blue);
+            transform: scale(1.05);
+        }
+
+        .play-button::after {
+            content: "▶";
+        }
+
+        /* Main content section */
+        .main-content {
+            text-align: center;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .main-content p {
+            font-size: clamp(18px, 2.5vw, 40px);
+            color: var(--text-gray);
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+
+        /* Neo Cards */
+        .neo-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .neo-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            transition: transform 0.3s ease;
+        }
+
+        .neo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .neo-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 30%;
+            object-fit: cover;
+        }
+
+        .nc-description {
+            font-family: Calibri;
+            font-size: clamp(20px, 2vw, 30px);
+            text-align: center;
+        }
+
+        /* Card Slider Section */
+        .card-slider-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 40px 20px;
+        }
+
+        .card-slide-title {
+            font-size: clamp(40px, 5vw, 70px);
+            font-weight: lighter;
+            margin-bottom: 30px;
+        }
+
+        .card-slide-description {
+            font-size: clamp(18px, 2vw, 30px);
+            color: #8d8787;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Social Cards Marquee */
+        .neo-social-cards {
+            margin: 60px 0;
+            overflow: hidden;
+        }
+
+        .marquee-container {
+            display: flex;
+            gap: 20px;
+            animation: scroll 30s linear infinite;
+        }
+
+        .social-card {
+            position: relative;
+            min-width: 300px;
+            margin: 10px;
+        }
+
+        .social-card img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10%;
+        }
+
+        .social-button {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 170px;
+            padding: 20px 10px;
+            border-radius: 70px;
+            background-color: #bed0f8;
+            color: #395eaf;
+            font-weight: 600;
+            font-size: 20px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-button:hover {
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .social-button .bi {
+            font-size: 20px;
+            background-color: #ffffff;
+            color: rgb(110, 14, 189);
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .trailer {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .play-button {
+                margin: 0;
+            }
+
+            .main-content {
+                padding: 0 15px;
+            }
+
+            .neo-cards {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <img src="../public/images/Screenshot 2024-12-27 145625[1].png" alt="Elgato" height="30">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto  fs-3 product-nav">
+                    <li class="nav-item">
+                        <a class="nav-link products-trigger" href="#">PRODUCTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">BLOGS</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav fs-3 support-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SUPPORT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">COMMUNITY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cart.html" target="_blank"><i  class="bi bi-cart-fill"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="products-dropdown">
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="../public/images/all-meet-neo.webp" alt="All Meet Neo">
+                    <div><a href="./meetneo.html" class="product-label">ALL MEET NEO</a></div>
+                </div>
+                <div class="product-card">
+                    <img src="../public/images/pc-accessories.webp" alt="PC Accessories">
+                    <div class="product-label">PC ACCESSORIES</div>
+                </div>
+                <div class="product-card">
+                    <img src="../public/images/mobile-acc.jpg" alt="Mobile Accessories">
+                    <div class="product-label">MOBILE ACCESSORIES</div>
+                </div>
+                <div class="product-card">
+                    <img src="../public/images/console-acc.jpg" alt="Console">
+                    <div class="product-label">CONSOLE</div>
+                </div>
+            </div>
+        </div>
+        </nav>
+
+    <div class="container">
+        <div class="video-container">
+            <video src="../public/video/1-Neo.mp4" autoplay loop muted></video>
+        </div>
+
+        <h4>Meet Neo</h4>
+
+        <div class="trailer">
+            <h1>Great tech made easy.</h1>
+            <a href="./meetneovideo.html" class="play-button">Play Trailer</a>
+        </div>
+
+        <div class="main-content">
+            <p>We all want to <span class="highlight-span">be more professional online</span>, but</p>
+            <p>complex tech isn't for everyone. So we made Neo.</p>
+            <p>Plug-'n-play tools <span class="highlight-span">made for what matters most</span>—</p>
+            <p>clear sound, great video, smart controls.</p>
+            <p>Everything you need to <span class="highlight-span">work and create like a boss</span>,</p>
+            <p>no matter what your setup.</p>
+        </div>
+
+        <div class="neo-cards">
+            <div class="neo-card">
+                <img src="../public/images/key-light-neo.avif" alt="Key Light Neo">
+                <div class="nc-description">Key Light Neo</div>
+                <button class="btn btn-outline-light">Learn more</button>
+            </div>
+            <div class="neo-card">
+                <img src="../public/images/stream-deck-neo.avif" alt="Stream Deck Neo">
+                <div class="nc-description">Stream Deck Neo</div>
+                <button class="btn btn-outline-light">Learn more</button>
+            </div>
+            <div class="neo-card">
+                <img src="../public/images/facecam-neo.avif" alt="Facecam Neo">
+                <div class="nc-description">Facecam Neo</div>
+                <button class="btn btn-outline-light">Learn more</button>
+            </div>
+            <div class="neo-card">
+                <img src="../public/images/game-capture-neo.avif" alt="Game Capture Neo">
+                <div class="nc-description">Game Capture Neo</div>
+                <button class="btn btn-outline-light">Learn more</button>
+            </div>
+            <div class="neo-card">
+                <img src="../public/images/wave-neo.avif" alt="Wave Neo">
+                <div class="nc-description">Wave Neo</div>
+                <button class="btn btn-outline-light">Learn more</button>
+            </div>
+        </div>
+
+        <div class="card-slider-container">
+            <h1 class="card-slide-title">Neo for anything.</h1>
+            <div class="card-slide-description">
+                <p>From video calls to livestreams to voice chat, all roads start with Neo. Where your journey leads next is up to you.</p>
+            </div>
+        </div>
+
+        <div class="neo-social-cards">
+            <div class="marquee-container">
+                <div class="social-card">
+                    <img src="../public/images/Twitch.webp" alt="Twitch">
+                    <button class="social-button"><span class="bi bi-twitch"></span> Twitch</button>
+                </div>
+                <div class="social-card">
+                    <img src="../public/images/Discord.webp" alt="Discord">
+                    <button class="social-button"><span class="bi bi-discord"></span> Discord</button>
+                </div>
+                <div class="social-card">
+                    <img src="../public/images/Zoom.webp" alt="Zoom">
+                    <button class="social-button"><span class="bi bi-person-video"></span> Zoom</button>
+                </div>
+                <div class="social-card">
+                    <img src="../public/images/Teams.webp" alt="Teams">
+                    <button class="social-button"><span class="bi bi-microsoft-teams"></span> Teams</button>
+                </div>
+                <div class="social-card">
+                    <img src="../public/images/YouTube.webp" alt="YouTube">
+                    <button class="social-button"><span class="bi bi-youtube"></span> YouTube</button>
+                </div>
+                <div class="social-card">
+                    <img src="../public/images/Spotify.webp" alt="Spotify">
+                    <button class="social-button"><span class="bi bi-spotify"></span> Spotify</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
