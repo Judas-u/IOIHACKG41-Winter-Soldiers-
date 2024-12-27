@@ -199,46 +199,98 @@ section img {
 
 
 
-/* Footer Styles */
-footer {
-    background-color: #111;
-    color: #fff;
-    padding: 40px 20px;
+.footer {
+    padding: 4rem 0;
+    background-color: #fff;
 }
 
-footer ul {
-    list-style-type: none;
+.footer h5 {
+    color:black;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    color:#333;
+    list-style: none;
     padding: 0;
 }
 
-footer ul li {
-    margin: 5px 0;
+.footer-links li {
+    color: black;
+    margin-bottom: 0.75rem;
 }
 
-footer a {
+.footer-links a {
+    color: #333;
     text-decoration: none;
-    color: #fff;
 }
 
-.footer-bottom {
-    border-top: 1px solid #444;
-    margin-top: 20px;
-    padding-top: 20px;
-    font-size: 0.9rem;
+.footer-links a:hover {
+    color: #666;
 }
 
-/* Custom Classes */
-.gamers {
-    color: #29801A;
+.social-icons a {
+    color: #333;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    text-decoration: none;
 }
 
-/* Media Queries */
-@media (max-width: 992px) {
-    .header {
-        padding: 15px;
+.bottom-footer {
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+    margin-top: 2rem;
+}
+
+.newsletter input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+.first-section{
+    height: 600px;
+    width: 100vw;
+}
+
+.fourth-section{
+    height: 600px;
+    width: 100vw;
+    padding: 10px;
+}
+
+.fourth-section video{
+    border-radius: 25px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    &::-webkit-media-controls{
+        display: none !important;
     }
-    
-    .cart {
-        gap: 15px;
-    }
+}
+
+
+.fifth-section{
+    background-color: #EAEAEA;
+}
+
+.fifth-section h1{
+    text-align: center;
+    font-family: "Helvetica Neue Condensed", "Arial Narrow", sans-serif;
+    font-size: 70px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+}
+
+.social-media{
+    text-align: center;
+}
+
+
+.social-media a{
+    color: black;
+    font-size: xx-large;
+    margin: 10px;
 }
