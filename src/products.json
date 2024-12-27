@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "name": "GearUp Basilisk V3 Pro 35K",
+        "price": 200,
+        "image": "../public/images/mouse-rgb.png",
+        "description": "A high-performance gaming mouse featuring advanced optical sensor technology for precise tracking and customizable RGB lighting."
+      },
+      {
+        "id": 2,
+        "name": "GearUp BlackWidow V4 Pro - Orange Switch - US - Black",
+        "price": 250,
+        "image": "../public/images/keyboard.png",
+        "description": "A mechanical gaming keyboard with tactile and responsive orange switches, designed for speed and accuracy in gaming."
+      },
+      {
+        "id": 3,
+        "name": "GearUp Barracuda X Chroma - Black",
+        "price": 290,
+        "image": "../public/images/headphone.png",
+        "description": "A lightweight wireless gaming headset with immersive surround sound, noise-canceling microphone, and customizable RGB lighting."
+      },
+      {
+        "id": 4,
+        "name": "GearUp Wolverine V3 Pro",
+        "price": 200,
+        "image": "../public/images/controller.png",
+        "description": "A professional-grade gaming controller with remappable buttons, adjustable triggers, and customizable controls for enhanced gameplay."
+      },
+      {
+        "id": 5,
+        "name": "GearUp XTR reaper earbuds",
+        "price": 300,
+        "image": "../public/images/earbuds.png",
+        "description": "High-fidelity gaming earbuds with immersive sound, noise isolation, and a comfortable fit for extended gaming sessions."
+      },
+      {
+        "id": 6,
+        "name": "GearUp Risen Fan Controller",
+        "price": 200,
+        "image": "../public/images/fan-controller.png",
+        "description": "A powerful fan controller for optimizing airflow and cooling performance in your gaming setup."
+      },
+      {
+        "id": 7,
+        "name": "GearUp Iskur V2 - Black / Green",
+        "price": 200,
+        "image": "../public/images/chair-1.png",
+        "description": "An ergonomic gaming chair with adjustable lumbar support, 4D armrests, and premium materials for maximum comfort during long gaming sessions."
+      },
+      {
+        "id": 8,
+        "name": "GearUp Edge Gaming Tablet and Kishi V2 Pro Controller",
+        "price": 200,
+        "image": "../public/images/tablet-pro.png",
+        "description": "A powerful gaming tablet paired with a pro-level mobile controller for a seamless and immersive mobile gaming experience."
+      }
+
+]
