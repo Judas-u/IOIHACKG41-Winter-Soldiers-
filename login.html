@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razer ID Login</title>
+
+    <!-- Link with stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: #000;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .fan-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fan-line {
+            position: absolute;
+            width: 1000px;
+            height: 100px;
+            transform-origin: left center;
+            background: linear-gradient(to right, rgba(0, 100, 0, 0.2), rgba(0, 255, 0, 0.2));
+        }
+
+        .fan-line::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #00ff00;
+            animation: glow 3s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                opacity: 0.5;
+                box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+            }
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+            }
+        }
+
+        .login-container{
+            width: 400px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 0, 0.2);
+            border-radius: 8px;
+            z-index: 1;
+        }
+        .auth-container{
+            width: 800px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 0, 0.2);
+            border-radius: 8px;
+            color: rgb(29, 252, 0);
+            z-index: 1000; /* Higher z-index to show above login container */
+        }
+
+        .login-title, .auth-title {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        a{
+            color: #00ff00;
+            text-decoration: none;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            color: white;
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #00ff00;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .password-toggle:hover {
+            color: #00ff00;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+
+        .forgot-password a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .forgot-password a:hover {
+            color: #00ff00;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #00aa00;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background: #00ff00;
+        }
+
+        .signup-text {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .signup-text a {
+            color: #00ff00;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .signup-text a:hover {
+            color: #00aa00;
+        }
+
+        .social-login {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .social-text {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            background: #222;
+            border: none;
+            cursor: pointer;
+            color: rgb(255, 255, 255);
+            transition: background-color 0.3s;
+        }
+
+        .social-button:hover {
+            background: #284206;
+        }
+
+        .brand-text {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        /* Registration Form */
+        .auth-container {
+            display: none;
+        }
+
+        .auth-container.active {
+            display: block;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #00aa00;
+            border-radius: 20px;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        .login-container, .auth-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none; /* Hidden by default */
+    }
+
+    .login-container.active, .auth-container.active {
+        display: block; /* Show when active */
+    }
+
+    /* Add smooth transitions */
+    .login-container, .auth-container {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .login-container.active, .auth-container.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    </style>
+</head>
+<body>
+    <div class="fan-background" id="fanBackground"></div>
+
+    <div class="login-container" id="signInModal">
+        <h2 class="login-title">L O G I N</h2>
+        <form onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <input type="email" name="email" placeholder="EMAIL ADDRESS" required>
+            </div>
+            <div class="input-group">
+                <input type="password" name="password" placeholder="PASSWORD" required>
+                <span class="password-toggle">👁</span>
+            </div>
+            <div class="forgot-password">
+                <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit" class="login-button">LOG IN</button>
+        </form>
+
+        <div class="signup-text">
+            <p>Don't have an account yet?</p>
+            <a href="#" onclick="switchToRegister()">Sign Up ></a>
+        </div>
+
+        <div class="social-login">
+            <div class="social-text">or continue with</div>
+            <div class="social-buttons">
+                <button class="social-button bi bi-google"></button>
+                <button class="social-button bi bi-twitter-x"></button>
+                <button class="social-button bi bi-meta"></button>
+                <button class="social-button bi bi-instagram"></button>
+                <button class="social-button bi bi-apple"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="brand-text">FOR GAMERS. BY GAMERS.™</div>
+
+    <div class="auth-container" id="registerModal">
+        <h2 class="auth-title">Sign Up</h2>
+        <form onsubmit="handleRegister(event)">
+            <div class="input-group">
+                <input type="email" name="email" placeholder="EMAIL ADDRESS *" required>
+            </div>
+            <div class="input-group">
+                <input type="text" name="username" placeholder="USERNAME *" required>
+            </div>
+            <div class="input-group">
+                <label class="input-label">LOCATION / REGION <span class="required">*</span></label>
+                <select name="region" required>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Canada">Canada</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <input type="password" name="password" placeholder="PASSWORD *" required>
+                <span class="password-toggle">👁</span>
+            </div>
+            <div class="input-group">
+                <input type="password" name="confirmPassword" placeholder="CONFIRM PASSWORD *" required>
+                <span class="password-toggle">👁</span>
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="updates">
+                <label class="form-check-label ms-2" for="updates">
+                    Get exclusive product updates, special offers, and event info
+                </label>
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" required>
+                <label class="form-check-label ms-2">
+                    I agree to the <a href="#">Terms and Conditions</a> and
+                    <a href="#">Privacy Policy</a>. <span class="required">*</span>
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">Create Account</button>
+        </form>
+    </div>
+
+    <script>
+        // Create fan background
+        const fanBackground = document.getElementById('fanBackground');
+        for (let i = 0; i < 12; i++) {
+            const fanLine = document.createElement('div');
+            fanLine.className = 'fan-line';
+            fanLine.style.transform = `rotate(${i * 30}deg)`;
+            fanLine.style.animationDelay = `${Math.random() * 2}s`;
+            fanBackground.appendChild(fanLine);
+        }
+
+        // Password toggle functionality
+        document.querySelectorAll('.password-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const input = toggle.previousElementSibling;
+                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                input.setAttribute('type', type);
+            });
+        });
+
+        // Switch between forms
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function switchToRegister() {
+            closeModal('signInModal');
+            document.getElementById('registerModal').style.display = 'flex';
+        }
+
+        function switchToSignIn() {
+            closeModal('registerModal');
+            document.getElementById('signInModal').style.display = 'flex';
+        }
+
+        // Handle form submissions
+        function handleLogin(event) {
+            event.preventDefault();
+            console.log('Login submitted');
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            console.log('Registration submitted');
+        }
+
+        function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove('active');
+    }
+
+    function switchToRegister() {
+        closeModal('signInModal');
+        document.getElementById('registerModal').classList.add('active');
+    }
+
+    function switchToSignIn() {
+        closeModal('registerModal');
+        document.getElementById('signInModal').classList.add('active');
+    }
+
+    // Ensure the initial state is set correctly
+    document.getElementById('signInModal').classList.add('active');
+    </script>
+</body>
+</html>
