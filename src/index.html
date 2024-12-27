@@ -11,49 +11,56 @@
 <body >
     
 
-    <!-- Header Section -->
-    <header class="d-flex justify-content-between header">
-        <div class="logo">
-            <img src="../public/images/Screenshot 2024-12-27 145625[1].png" alt="Logo">
+    <!-- Header NavBar Section -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../public/images/Screenshot 2024-12-27 145625[1].png" alt="Elgato" height="30">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto  fs-3 product-nav">
+                    <li class="nav-item">
+                        <a class="nav-link products-trigger" href="#">PRODUCTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">BLOGS</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav fs-3 support-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SUPPORT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">COMMUNITY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cart.html" target="_blank"><i  class="bi bi-cart-fill"></i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <nav class="navbar">
-            <div class="container">
-                <div class="d-flex align-items-center">
-                    <div class="nav-item">
-                        <a class="nav-link products" href="#">PRODUCTS</a>
-                        <div class="mega-dropdown">
-                            <div class="product-grid">
-                                <div class="product-category">
-                                    <img src="../public/images/all-meet-neo.webp" alt="All Products">
-                                    <h3>ALL MEET NEO</h3>
-                                </div>
-                                <div class="product-category">
-                                    <img src="../public/images/pc-accessories.webp" alt="PC Accessories">
-                                    <h3>PC ACCESSORIES</h3>
-                                </div>
-                                <div class="product-category">
-                                    <img src="../public/images/mobile-acc.jpg" alt="Mobile Accessories">
-                                    <h3>MOBILE ACCESSORIES</h3>
-                                </div>
-                                <div class="product-category">
-                                    <img src="../public/images/console-acc.jpg" alt="Console">
-                                    <h3>CONSOLE</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="nav-link blogs" href="#">BLOGS</a>
+        <div class="products-dropdown">
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="../public/images/all-meet-neo.webp" alt="All Meet Neo">
+                    <div class="product-label">ALL MEET NEO</div>
+                </div>
+                <div class="product-card">
+                    <img src="../public/images/pc-accessories.webp" alt="PC Accessories">
+                    <div class="product-label">PC ACCESSORIES</div>
+                </div>
+                <div class="product-card">
+                    <img src="../public/images/mobile-acc.jpg" alt="Mobile Accessories">
+                    <div class="product-label">MOBILE ACCESSORIES</div>
+                </div>
+                <div class="product-card">
+                    <img src="../public/images/console-acc.jpg" alt="Console">
+                    <div class="product-label">CONSOLE</div>
                 </div>
             </div>
-        </nav>
-
-        <div class="cart">
-            <span>SUPPORT</span>
-            <span>COMMUNITY</span>
-            <a href="./cart.html" class="bi bi-cart-fill" target="_blank"></a>
         </div>
-    </header>
+    </nav>
 
 
     <section class="first-section d-flex justify-content-between">
