@@ -1,0 +1,45 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "**/*.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "**/*.js",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "**/*.css",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/",
+        "dest": "/index.html"
+      },
+      {
+        "src": "/cart",
+        "dest": "/cart.html"
+      },
+      {
+        "src": "/meetneo",
+        "dest": "/meetneo.html"
+      },
+      {
+        "src": "/meetneovideo",
+        "dest": "/meetneovideo.html"
+      },
+      {
+        "src": "/codvideo",
+        "dest": "/codvideo.html"
+      },
+      {
+        "src": "/(.+)",
+        "dest": "/$1"
+      }
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false
+  }
