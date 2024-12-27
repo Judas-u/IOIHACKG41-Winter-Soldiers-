@@ -1,45 +1,15 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "**/*.html",
-        "use": "@vercel/static"
-      },
-      {
-        "src": "**/*.js",
-        "use": "@vercel/static"
-      },
-      {
-        "src": "**/*.css",
-        "use": "@vercel/static"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/",
-        "dest": "/index.html"
-      },
-      {
-        "src": "/cart",
-        "dest": "/cart.html"
-      },
-      {
-        "src": "/meetneo",
-        "dest": "/meetneo.html"
-      },
-      {
-        "src": "/meetneovideo",
-        "dest": "/meetneovideo.html"
-      },
-      {
-        "src": "/codvideo",
-        "dest": "/codvideo.html"
-      },
-      {
-        "src": "/(.+)",
-        "dest": "/$1"
-      }
+    "rewrites": [
+      { "source": "/", "destination": "/index.html" },
+      { "source": "/cart", "destination": "/cart.html" },
+      { "source": "/meetneo", "destination": "/meetneo.html" },
+      { "source": "/meetneovideo", "destination": "/meetneovideo.html" },
+      { "source": "/codvideo", "destination": "/codvideo.html" },
+      { "source": "/:path*", "destination": "/:path*" }
     ],
     "cleanUrls": true,
     "trailingSlash": false
   }
+
+  
