@@ -13,6 +13,13 @@ body {
     padding: 0;
 }
 
+
+.gear-up{
+    font-size: larger;
+    font-weight: bold;
+    letter-spacing: 3px;
+} 
+
 .overlay-text {
     position: absolute;
     top: 50%;
