@@ -13,6 +13,29 @@ body {
     padding: 0;
 }
 
+/* Sign In Button */
+.get-started-button {
+    background: linear-gradient(to right, #9E5BF3, #6C0EEF) ; 
+    border-radius: 20px;
+    padding: 15px 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .get-started-button:hover {
+    background: linear-gradient(to right,#7438ac, #b702ff);
+    transform: scale(1.10);
+  }
+
+  .get-started-button::after {
+    content: " →";
+    margin-left: 5px;
+  }
+
+
 
 .gear-up{
     font-size: larger;
