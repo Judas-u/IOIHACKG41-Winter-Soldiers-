@@ -182,16 +182,124 @@ body.showCart .container{
   transition: all 0.2s ease; /* Add transition for smooth effects */
 }
 
+/* Tablet Styles */
 @media only screen and (max-width: 992px) {
-    .listProduct{
-        grid-template-columns: repeat(3, 1fr);
+    .container {
+        max-width: 95vw;
+    }
+    
+    .cartTab {
+        width: 320px;
+    }
+    
+    .listCart .item {
+        grid-template-columns: 60px 120px 40px 1fr;
+        gap: 8px;
+    }
+    
+    .title {
+        font-size: x-large;
     }
 }
 
-
-/* mobile */
+/* Mobile Styles */
 @media only screen and (max-width: 768px) {
-    .listProduct{
-        grid-template-columns: repeat(2, 1fr);
+    .container {
+        max-width: 100vw;
+        padding: 10px;
+    }
+    
+    header {
+        padding: 10px 0;
+        flex-wrap: wrap;
+    }
+    
+    .title {
+        font-size: large;
+        order: 2;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .navbar-brand {
+        order: 1;
+    }
+    
+    .icon-cart {
+        order: 1;
+    }
+    
+    .cartTab {
+        width: 100%;
+        right: -100%;
+    }
+    
+    body.showCart .cartTab {
+        right: 0;
+    }
+    
+    body.showCart .container {
+        transform: translateX(-100%);
+    }
+    
+    .listCart .item {
+        grid-template-columns: 50px 100px 40px 1fr;
+        gap: 5px;
+        padding: 10px;
+    }
+    
+    .listCart .item img {
+        width: 45px;
+    }
+    
+    .cartTab .btn {
+        gap: 5px;
+        padding: 10px;
+    }
+    
+    .cartTab button {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .listCart .quantity span {
+        width: 22px;
+        height: 22px;
+        font-size: 14px;
+        line-height: 22px;
+    }
+    
+    /* Adjust gear-up text size */
+    .gear-up {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+}
+
+/* Small Mobile Devices */
+@media only screen and (max-width: 480px) {
+    header img {
+        height: 25px;
+    }
+    
+    .cartTab h1 {
+        font-size: 20px;
+        padding: 15px;
+    }
+    
+    .listCart .item {
+        grid-template-columns: 40px 80px 35px 1fr;
+        font-size: 14px;
+    }
+    
+    .icon-cart svg {
+        width: 25px;
+    }
+    
+    .icon-cart span {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
     }
 }
