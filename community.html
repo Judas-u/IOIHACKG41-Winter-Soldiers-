@@ -1,385 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Game Warrior Template</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="Game Warrior Template">
-	<meta name="keywords" content="warrior, game, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->   
-	<link href="img/favicon.ico" rel="shortcut icon"/>
-
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
-
-	<!-- Updated Stylesheets -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<link rel="stylesheet" href="/css/style.css"/>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Community Hub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Gaming Community Hub</h1>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-gray-300">Home</a>
+                <a href="#" class="hover:text-gray-300">Events</a>
+                <a href="#" class="hover:text-gray-300">Support</a>
+            </div>
+        </div>
+    </nav>
 
-	<!-- Header section -->
-	<header class="header-section">
-		<div class="container">
-			<!-- logo -->
-			<a class="site-logo" href="index.html">
-				<img src="img/logo.jpg" height="40">
-			</a>
-			<div class="user-panel">
-				<a href="#">Login</a>  /  <a href="#">Register</a>
-			</div>
-			<!-- responsive -->
-			<div class="nav-switch">
-				<i class="fa fa-bars"></i>
-			</div>
-			<!-- site menu -->
-			<nav class="main-menu">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="review.html">Games</a></li>
-					<li><a href="categories.html">Blog</a></li>
-					<li><a href="community.html">Forums</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<!-- Header section end -->
+    <!-- Upcoming Events Section -->
+    <section class="container mx-auto mt-8 p-4">
+        <h2 class="text-3xl font-bold mb-6">Upcoming Events</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Event Card 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-2">Pro Players Q&A Session</h3>
+                <p class="text-gray-600 mb-4">Date: January 15, 2025</p>
+                <p class="mb-4">Join our top players for strategy discussions and tips!</p>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Register Now</button>
+            </div>
+            
+            <!-- Event Card 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-2">Community Tournament</h3>
+                <p class="text-gray-600 mb-4">Date: January 20, 2025</p>
+                <p class="mb-4">Compete with fellow gamers and win exciting prizes!</p>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Join Tournament</button>
+            </div>
+            
+            <!-- Event Card 3 -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold mb-2">Strategy Workshop</h3>
+                <p class="text-gray-600 mb-4">Date: January 25, 2025</p>
+                <p class="mb-4">Learn advanced strategies from professional coaches!</p>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Reserve Spot</button>
+            </div>
+        </div>
+    </section>
 
+    <!-- Featured Streamers Section -->
+    <section class="container mx-auto mt-12 p-4">
+        <h2 class="text-3xl font-bold mb-6">Featured Streamers</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Streamer Card 1 -->
+            <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                <img src="/api/placeholder/100/100" alt="Streamer 1" class="rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-bold">ProGamer123</h3>
+                <p class="text-gray-600 mb-2">Strategy Expert</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Chat Now</button>
+            </div>
 
-	<!-- Latest news section -->
-	<div class="latest-news-section">
-		<div class="ln-title">Latest News</div>
-		<div class="news-ticker">
-			<div class="news-ticker-contant">
-				<div class="nt-item"><span class="new">new</span>Starfield: Space Odyssey Awaits!</div>
-				<div class="nt-item"><span class="strategy">strategy</span>Spider-Man 2 Delayed, But the Hype Remains Real!</div>
-				<div class="nt-item"><span class="racing">racing</span>Esports Heats Up: Are You Ready to Compete?</div>
-			</div>
-		</div>
-	</div>
-	<!-- Latest news section end -->
+            <!-- Streamer Card 2 -->
+            <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                <img src="/api/placeholder/100/100" alt="Streamer 2" class="rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-bold">ESportsQueen</h3>
+                <p class="text-gray-600 mb-2">Tournament Champion</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Chat Now</button>
+            </div>
 
+            <!-- Streamer Card 3 -->
+            <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                <img src="/api/placeholder/100/100" alt="Streamer 3" class="rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-bold">GameMaster</h3>
+                <p class="text-gray-600 mb-2">Pro Coach</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Chat Now</button>
+            </div>
 
-	<!-- Page info section -->
-	<section class="page-info-section set-bg" data-setbg="img/page-top-bg/3.jpg">
-		<div class="pi-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-xl-5 col-lg-6 text-white">
-						<h2>Our Community</h2>
-						<p>Welcome to the community of gamers who trust us to deliver the ultimate gaming experience. Discover gear that's as unique as your playstyle.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Page info section -->
+            <!-- Streamer Card 4 -->
+            <div class="bg-white rounded-lg shadow-md p-4 text-center">
+                <img src="/api/placeholder/100/100" alt="Streamer 4" class="rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-bold">TacticalPro</h3>
+                <p class="text-gray-600 mb-2">Team Captain</p>
+                <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Chat Now</button>
+            </div>
+        </div>
+    </section>
 
-	<!-- Tournaments section -->
-	<section class="tournaments-section spad">
-		<div class="container">
-			<div class="tournament-title mb-5">Tournaments</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="tournament-item mb-4 mb-lg-0">
-						<div class="ti-notic">Premium Tournament</div>
-						<div class="ti-content">
-							<div class="ti-thumb set-bg" data-setbg="img/tournament/1.jpg"></div>
-							<div class="ti-text">
-								<h4>World Of WarCraft</h4>
-								<ul>
-									<li><span>Tournament Begins:</span> January 7, 2025</li>
-									<li><span>Tounament Ends:</span> February 01, 2025</li>
-									<li><span>Participants:</span> 10 teams</li>
-									<li><span>Tournament Author:</span> Admin</li>
-								</ul>
-								<p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="tournament-item">
-						<div class="ti-notic">Premium Tournament</div>
-						<div class="ti-content">
-							<div class="ti-thumb set-bg" data-setbg="img/tournament/p2.webp"></div>
-							<div class="ti-text">
-								<h4>DOOM</h4>
-								<ul>
-									<li><span>Tournament Begins:</span> March 18, 2025</li>
-									<li><span>Tounament Ends:</span> April 01, 2025</li>
-									<li><span>Participants:</span> 10 teams</li>
-									<li><span>Tournament Author:</span> Admin</li>
-								</ul>
-								<p><span>Prizes:</span> 1st place $2000, 2nd place: $1000, 3rd place: $500</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="tournament-item">
-						<div class="ti-notic-open">Open Tournament</div>
-						<div class="ti-content">
-							<div class="ti-thumb set-bg" data-setbg="img/tournament/2.jpg"></div>
-							<div class="ti-text">
-								<h4>DOOM</h4>
-								<ul>
-									<li><span>Tounament Day:</span> Every Wednesday</li>
-									<li><span>Tounament Time:</span> 7:00 PM to 10:00 PM</li>
-									<li><span>Participants:</span> 20 teams(4v4)</li>
-									<li><span>Tournament Author:</span> Admin</li>
-								</ul>
-								<p><span>Prizes:</span> GearUp Credits</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="tournament-item">
-						<div class="ti-notic-open">Open Tournament</div>
-						<div class="ti-content">
-							<div class="ti-thumb set-bg" data-setbg="img/tournament/p1.jpg"></div>
-							<div class="ti-text">
-								<h4>DOOM</h4>
-								<ul>
-									<li><span>Tounament Day:</span> Every Wednesday</li>
-									<li><span>Tounament Time:</span> 7:00 PM to 10:00 PM</li>
-									<li><span>Participants:</span> 20 teams(4v4)</li>
-									<li><span>Tournament Author:</span> Admin</li>
-								</ul>
-								<p><span>Prizes:</span> GearUp Credits</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Tournaments section bg -->
-
-
-	<!-- Page section -->
-	<section class="page-section community-page set-bg" data-setbg="img/community-bg.jpg">
-		<div class="community-warp spad">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<h3 class="community-top-title">All Members (344)</h3>
-					</div>
-					<div class="col-md-6 text-lg-right">
-						<form class="community-filter">
-							<label for="fdf5">Show</label>
-							<select id="fdf5">
-								<option value="#">Everything</option>
-							</select>
-						</form>
-					</div>
-				</div>
-				<ul class="community-post-list">
-					<li>
-						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/1.jpg"></div>
-							<div class="post-content">
-								<h5>James Smith<span>posted an update</span></h5>
-								<div class="post-date">December 28, 2024</div>
-								<p>I was blown away by the quality of this headset! The sound is incredible, and the mic is crystal clear. I can finally hear every footstep and communicate with my squad perfectly. This has seriously leveled up my gameplay.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/8.jpg"></div>
-							<div class="post-content">
-								<h5>Partik Williams<span>posted an update</span></h5>
-								<div class="post-date">December 27, 2024</div>
-								<p>I used to get wrist pain after long gaming sessions, but this keyboard is a game-changer. The ergonomic design and soft-touch keys are incredibly comfortable. I can game for hours without any discomfort now.</p>
-								<div class="attachment-file">
-									<img src="img/attachment.jpg" alt="">
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/5.jpg"></div>
-							<div class="post-content">
-								<h5>Cris The Man<span>posted an update</span></h5>
-								<div class="post-date">November 21, 2024</div>
-								<p>This mouse is an absolute beast! The sensor is incredibly accurate, and the customizable RGB lighting is a nice touch. I've seen a noticeable improvement in my aim since switching to this mouse. Highly recommend it to any serious gamer.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/1.jpg"></div>
-							<div class="post-content">
-								<h5>James Smith<span>posted an update</span></h5>
-								<div class="post-date">October 21, 2024</div>
-								<p>I was hesitant to spend this much on a gaming chair, but it was totally worth it. The build quality is fantastic, and it's incredibly comfortable. I feel more focused and alert during gameplay, and my posture has improved too.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/4.jpg"></div>
-							<div class="post-content">
-								<h5>Cris The Man<span>posted an update</span></h5>
-								<div class="post-date">September 7, 2024</div>
-								<p>I love the sense of community that comes with this brand. The Discord server is awesome, and I've made some great friends there. The company really cares about its customers, and it shows.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/6.jpg"></div>
-							<div class="post-content">
-								<h5>James Smith<span>posted an update</span></h5>
-								<div class="post-date">August 21, 2024</div>
-								<p>I love the sense of community that comes with this brand. The Discord server is awesome, and I've made some great friends there. The company really cares about its customers, and it shows.</p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="community-post">
-							<div class="author-avator set-bg" data-setbg="img/authors/7.jpg"></div>
-							<div class="post-content">
-								<h5>Maria Doe<span>posted an update</span></h5>
-								<div class="post-date">July 21, 2024</div>
-								<p>Lorem ipsum dolor sit amet, cdictum nisl onsectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.Donec venenatis at eros sit amet aliquam. Donec vel orci efficitur, dictum nisl vitae, scelerisque nibh. Curabitur eget ipsum pulvinar nunc gravida interdum. </p>
-							</div>
-						</div>
-					</li>
-				</ul>
-				<div class="site-pagination sp-style-2">
-					<span class="active">01.</span>
-					<a href="#">02.</a>
-					<a href="#">03.</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Page section end -->
-
-
-	<!-- Footer top section -->
-	<section class="footer-top-section">
-		<div class="container">
-			<div class="footer-top-bg">
-				<img src="img/footer-top-bg.png" alt="">
-			</div>
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="footer-logo text-white">
-						<img src="img/logo.jpg" height="90">
-						<h2>Gear Up and Play On!</h2>
-						<p>Anywhere, Anytime, Gamers Unite...</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-widget mb-5 mb-md-0">
-						<h4 class="fw-title">Latest Posts</h4>
-						<div class="latest-blog">
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/1.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">December 27, 2024</div>
-									<p>Anywhere, whenever</p>
-									<a href="#" class="lb-author">By Admin</a>
-								</div>
-							</div>
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/2.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">December 25, 2024</div>
-									<p>Apart but still together</p>
-									<a href="#" class="lb-author">By Community Member</a>
-								</div>
-							</div>
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/3.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">December 21, 2024</div>
-									<p>We are not alone</p>
-									<a href="#" class="lb-author">By Player#12776</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-widget">
-						<h4 class="fw-title">Top Comments</h4>
-						<div class="top-comment">
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/1.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Counter Srike</p>
-									<div class="tc-date">December 27, 2024</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/2.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Call of Duty</p>
-									<div class="tc-date">December 26, 2024</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/3.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> Halo/p>
-									<div class="tc-date">December 24, 2024</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/4.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span> PUBG</p>
-									<div class="tc-date">December 21, 2024</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Footer top section end -->
-
-	
-	<!-- Footer section -->
-	<footer class="footer-section">
-		<div class="container">
-			<ul class="footer-menu">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="review.html">Games</a></li>
-				<li><a href="categories.html">Blog</a></li>
-				<li><a href="community.html">Forums</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-			<p class="copyright">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made for Gamers, by Gamers</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
-		</div>
-	</footer>
-	<!-- Footer section end -->
-
-
-	<!-- Updated Scripts -->
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.min.js"></script>
-	<script src="/js/main.js"></script>
-
+    <!-- Community Chat Section -->
+    <section class="container mx-auto mt-12 p-4 mb-8">
+        <h2 class="text-3xl font-bold mb-6">Community Chat</h2>
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="h-64 bg-gray-100 rounded-lg p-4 mb-4 overflow-y-auto">
+                <!-- Chat messages would appear here -->
+                <div class="mb-4">
+                    <p class="font-bold">ProGamer123:</p>
+                    <p>Hey everyone! Anyone want to discuss the latest meta?</p>
+                </div>
+                <div class="mb-4">
+                    <p class="font-bold">GameMaster:</p>
+                    <p>I'll be hosting a strategy session tomorrow at 3 PM!</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <input type="text" placeholder="Type your message..." class="flex-1 p-2 border rounded">
+                <button class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Send</button>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
