@@ -29,7 +29,7 @@ closeCart.addEventListener('click', () => {
                 `<img src="${product.image}" alt="">
                 <h2>${product.name}</h2>
                 <p class="description">${product.description}</p>
-                <div class="price">$${product.price}</div>
+                <div class="price">RS.${product.price}</div>
                 <button class="addCart">Add to cart</button>`;
                 listProductHTML.appendChild(newProduct);
             });
